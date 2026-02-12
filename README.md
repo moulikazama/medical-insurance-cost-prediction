@@ -1,174 +1,103 @@
-**Medical Insurance Cost Prediction**
+🏥 Medical Insurance Cost Prediction
+📌 Project Overview
 
+This project aims to predict medical insurance charges based on customer demographic and lifestyle features. The objective is to identify the most influential factors affecting insurance costs and build regression models to support pricing and risk assessment decisions.
 
+📂 Dataset
 
-**Project Overview**
+Public Medical Insurance Dataset sourced from Kaggle.
 
+Features:
 
+Numerical: Age, BMI, Children
 
-This project predicts medical insurance charges based on demographic and
+Categorical: Sex, Smoker, Region
 
-lifestyle features. The objective is to identify key cost-driving
+Target Variable: Insurance Charges
 
-factors and build regression models for accurate prediction.
+🔍 Exploratory Data Analysis (EDA)
 
+Insurance charges are highly right-skewed
 
+Significant outliers detected in target variable
 
-**Dataset**
+Smoking status has the strongest impact on charges
 
+Higher BMI and age increase medical costs
 
+Log transformation applied to stabilize variance and reduce skewness
 
-Source: Kaggle - Medical Insurance Dataset
+⚙️ Data Preprocessing
 
+One-hot encoding for categorical variables
 
+Log transformation applied on target variable
 
-**Features:**
+Train-test split for model evaluation
 
-\- Numerical: Age, BMI, Children
+🤖 Models Implemented
 
-\- Categorical: Sex, Smoker, Region
+Linear Regression (Baseline Model)
 
-\- Target: Insurance Charges
+Ridge Regression (L2 Regularization)
 
+Random Forest Regressor
 
+Hyperparameter tuning using GridSearchCV
 
-**Exploratory Data Analysis (EDA)**
+📊 Evaluation Metrics
 
+R² Score – Measures explained variance
 
+RMSE (Root Mean Squared Error) – Measures average prediction error
 
-\-   Charges are right-skewed
-
-\-   Outliers present in target variable
-
-\-   Smoking has the strongest impact on charges
-
-\-   BMI and Age positively correlate with insurance cost
-
-\-   Log transformation applied to reduce skewness
-
-
-
-**Data Preprocessing**
-
-
-
-\-   One-hot encoding for categorical variables
-
-\-   Log transformation applied to target
-
-\-   Train-test split performed
-
-
-
-**Models Implemented**
-
-
-
-\-   Linear Regression
-
-\-   Ridge Regression (L2 Regularization)
-
-\-   Random Forest Regressor
-
-\-   Hyperparameter tuning using GridSearchCV
-
-
-
-**Evaluation Metrics**
-
-
-
-\-   R² Score
-
-\-   RMSE (Root Mean Squared Error)
-
-
-
-**Model Performance Summary**
-
-
-
-RF (Tuned + Log) R²: 0.8796 RMSE: 4323
-
-RF (Log) R²: 0.8769 RMSE: 4370
-
-RF R²: 0.8644 RMSE: 4586
-
-Linear R²: 0.7835 RMSE: 5796
-
-Ridge R²: 0.7835RMSE: 5796
-
-
-
-**Best Model**
-
-
+🏆 Model Performance Summary
+Model	R² Score	RMSE
+RF (Tuned + Log)	0.8796	4323
+RF (Log)	0.8769	4370
+RF	0.8644	4586
+Linear	0.7835	5796
+Ridge	0.7835	5796
+✅ Best Model:
 
 Random Forest (Tuned + Log Transformation)
 
+💡 Key Insights
 
+Smoking is the most influential factor affecting insurance costs.
 
-**Key Insights**
+BMI and age significantly impact medical expenses.
 
+Random Forest captures non-linear relationships better than linear models.
 
+Log transformation improved model performance by handling skewness.
 
-\-   Smoking is the most influential factor.
-
-\-   BMI and Age significantly impact costs.
-
-\-   Random Forest captures non-linear relationships better than linear models.
-
-\-   Log transformation improved performance.
-
-
-
-**Project Structure**
-
-
-
+📁 Project Structure
 medical-insurance-cost-prediction/
-
 │
-
 ├── data/
-
 │   └── insurance.csv
-
 │
-
 ├── notebooks/
-
-│   ├── 01\_data\_preprocessing.ipynb
-
-│   ├── 02\_eda.ipynb
-
-│   ├── 03\_base\_model\_building.ipynb
-
-│   ├── 04\_improve\_model.ipynb
-
+│   ├── 01_data_preprocessing.ipynb
+│   ├── 02_eda.ipynb
+│   ├── 03_base_model_building.ipynb
+│   ├── 04_improve_model.ipynb
 │
-
 ├── results/
-
-│   └── model\_comparison\_results.csv
-
+│   └── model_comparison_results.csv
 │
-
 ├── README.md
-
 └── requirements.txt
 
+🚀 Future Improvements
 
+Deploy model using Streamlit or Flask
 
-**Conclusion**
+Add SHAP analysis for interpretability
 
+Experiment with XGBoost
 
+🧠 Conclusion
 
-This project demonstrates end-to-end regression modeling, preprocessing,
-
-hyperparameter tuning, and evaluation to build a reliable medical
-
-insurance cost prediction system.
-
-
-
+This project demonstrates end-to-end regression modeling, feature engineering, hyperparameter tuning, and performance evaluation to build a reliable medical insurance cost prediction model.
