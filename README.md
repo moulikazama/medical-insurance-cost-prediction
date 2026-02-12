@@ -1,80 +1,174 @@
-# Medical Insurance Cost Prediction
-
-## Problem Statement
-
-Predict medical insurance charges based on customer demographic and lifestyle data to support pricing and risk assessment.
-
-## Dataset
-
-Public medical insurance dataset from Kaggle.
-
-## Features
-
-**•**   Numerical: Age, BMI, Children
-
-**•**   Categorical: Sex, Smoking Status, Region
-
-**•**   Target Variable: Insurance Charges
-
-## Approach
-
-•   Data cleaning and preprocessing
-
-•   One-hot encoding for categorical variables
-
-•   Exploratory Data Analysis (EDA)
-
-•   Outlier detection and skewness analysis
-
-•   Log transformation applied to target variable to handle right skewness
-
-•   Feature relevance analysis using correlation and domain insights
-
-•   Regression modeling:
-
- 	•  Linear Regression (baseline)
-
- 	•  Ridge Regression (regularization)
-
- 	•  Random Forest Regressor (non-linear modeling)
-
-## Model Evaluation Metrics
-
-**•   R² Score** – to measure goodness of fit
-
-**•   RMSE** – to measure average prediction error magnitude
-
-## Key Insights 
-
-•   Smoking status is the most influential factor driving insurance charges.
-
-•   BMI and age show strong positive relationships with medical costs.
-
-•   Insurance charges are highly right-skewed, and log transformation improves model stability.
-
-•   Random Forest captures non-linear relationships better than linear models.
-
-•   Log-transformed target improves performance for linear and ridge regression.
-
-## Current Status
-
-✔ Data preprocessing completed
-
-✔ Exploratory Data Analysis completed
-
-✔ Feature engineering \& log transformation completed
-
-🔄 Model building and comparison (normal vs log target) in progress
-
-🔄 Hyperparameter tuning in progress
+**Medical Insurance Cost Prediction**
 
 
 
+**Project Overview**
 
 
 
+This project predicts medical insurance charges based on demographic and
+
+lifestyle features. The objective is to identify key cost-driving
+
+factors and build regression models for accurate prediction.
 
 
+
+**Dataset**
+
+
+
+Source: Kaggle - Medical Insurance Dataset
+
+
+
+**Features:**
+
+\- Numerical: Age, BMI, Children
+
+\- Categorical: Sex, Smoker, Region
+
+\- Target: Insurance Charges
+
+
+
+**Exploratory Data Analysis (EDA)**
+
+
+
+\-   Charges are right-skewed
+
+\-   Outliers present in target variable
+
+\-   Smoking has the strongest impact on charges
+
+\-   BMI and Age positively correlate with insurance cost
+
+\-   Log transformation applied to reduce skewness
+
+
+
+**Data Preprocessing**
+
+
+
+\-   One-hot encoding for categorical variables
+
+\-   Log transformation applied to target
+
+\-   Train-test split performed
+
+
+
+**Models Implemented**
+
+
+
+\-   Linear Regression
+
+\-   Ridge Regression (L2 Regularization)
+
+\-   Random Forest Regressor
+
+\-   Hyperparameter tuning using GridSearchCV
+
+
+
+**Evaluation Metrics**
+
+
+
+\-   R² Score
+
+\-   RMSE (Root Mean Squared Error)
+
+
+
+**Model Performance Summary**
+
+
+
+RF (Tuned + Log) R²: 0.8796 RMSE: 4323
+
+RF (Log) R²: 0.8769 RMSE: 4370
+
+RF R²: 0.8644 RMSE: 4586
+
+Linear R²: 0.7835 RMSE: 5796
+
+Ridge R²: 0.7835RMSE: 5796
+
+
+
+**Best Model**
+
+
+
+Random Forest (Tuned + Log Transformation)
+
+
+
+**Key Insights**
+
+
+
+\-   Smoking is the most influential factor.
+
+\-   BMI and Age significantly impact costs.
+
+\-   Random Forest captures non-linear relationships better than linear models.
+
+\-   Log transformation improved performance.
+
+
+
+**Project Structure**
+
+
+
+medical-insurance-cost-prediction/
+
+│
+
+├── data/
+
+│   └── insurance.csv
+
+│
+
+├── notebooks/
+
+│   ├── 01\_data\_preprocessing.ipynb
+
+│   ├── 02\_eda.ipynb
+
+│   ├── 03\_base\_model\_building.ipynb
+
+│   ├── 04\_improve\_model.ipynb
+
+│
+
+├── results/
+
+│   └── model\_comparison\_results.csv
+
+│
+
+├── README.md
+
+└── requirements.txt
+
+
+
+**Conclusion**
+
+
+
+This project demonstrates end-to-end regression modeling, preprocessing,
+
+hyperparameter tuning, and evaluation to build a reliable medical
+
+insurance cost prediction system.
 
 
 
